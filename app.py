@@ -27,7 +27,7 @@ def download_cache(cache_dir: str, repo_name: str):
 
             elapsed = 0
             while os.environ.get("GIT_LFS_PROGRESS"):
-                st.write("been waiting {elapsed} seconds...")
+                st.write(f"been waiting {elapsed} seconds...")
                 time.sleep(1)
                 elapsed += 1
             # repo.git_pull()  # Needed? What about if I'm running this locally + wanna update my local cache?
