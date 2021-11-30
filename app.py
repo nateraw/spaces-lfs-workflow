@@ -6,7 +6,6 @@ from subprocess import call
 import streamlit as st
 from huggingface_hub import Repository
 
-
 CACHE_DIR = 'cache_dir/'
 
 
@@ -35,3 +34,7 @@ def main():
     st.write(os.listdir('./cache_dir'))
     st.json(os.environ)
     run_cmd('ls -lash cache_dir/')
+
+
+if __name__ == '__main__':
+    main()
