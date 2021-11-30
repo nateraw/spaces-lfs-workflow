@@ -22,11 +22,14 @@ def run_cmd(command):
 def download_cache(cache_dir: str, repo_name: str):
     """Clones a repo from HuggingFace Hub to a cache directory"""
     if os.environ.get("DO_DOWNLOAD_CACHE") and 'cache_is_downloaded' not in st.session_state:
-        with st.spinner("Downloading cache..."):
+        with st.spinner("Downloading cache...this might take a while 😬"):
             repo = Repository(local_dir=cache_dir, clone_from=repo_name, repo_type='dataset')
 
+            elapsed = 0
             while os.environ.get("GIT_LFS_PROGRESS"):
+                st.write("been waiting {elapsed} seconds...")
                 time.sleep(1)
+                elapsed += 1
             # repo.git_pull()  # Needed? What about if I'm running this locally + wanna update my local cache?
 
 
