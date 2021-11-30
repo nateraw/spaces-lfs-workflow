@@ -32,7 +32,7 @@ def main():
     download_cache('cache_dir', 'nateraw/fairface')
     st.write(os.listdir('.'))
     st.write(os.listdir('./cache_dir'))
-    st.json(os.environ)
+    st.write(os.environ)
     run_cmd('ls -lash cache_dir/')
 
 
